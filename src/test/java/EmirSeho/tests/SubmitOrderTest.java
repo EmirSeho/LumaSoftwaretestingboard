@@ -1,5 +1,6 @@
 package EmirSeho.tests;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -13,10 +14,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import EmirSeho.TestComponents.BaseTest;
 import PageObjects.CartPage;
 import PageObjects.CheckoutShippingPage;
+import PageObjects.ConfirmationPage;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import PageObjects.MenJacketsCatalogue;
@@ -27,45 +30,46 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SubmitOrderTest extends BaseTest{
 
-	public static void main(String[] args) throws InterruptedException {
+	String productName = "Lando Gym Jacket";
+	
+	@Test
+	public void SubmitOrder() throws InterruptedException, IOException {
 		
-		String productName = "Lando Gym Jacket";
+		//removed bacause of @BeforeMethod
+		//HomePage homePage = launchApplication();
+
+		LoginPage loginPage = homePage.clickOnSignIn();
 		
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		
-		driver.manage().window().maximize();
-		
-		HomePage homePage = new HomePage(driver);
-		homePage.goTo();
-		homePage.clickOnSignIn();
-		
-		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginApplication("seho-emir@gmail.com", "Verysecureone1");
 		
-		homePage.clickOnMenTabLink();
+		MenPage menPage = homePage.clickOnMenTabLink();
 		
-		MenPage menPage = new MenPage(driver);
-		menPage.clickOnJackets();
+		MenJacketsCatalogue menJacketsCatalogue = menPage.clickOnJackets();
 		
-		MenJacketsCatalogue menJacketsCatalogue = new MenJacketsCatalogue(driver);
-		menJacketsCatalogue.addProductToCart(productName);
+		ProductPage productPage = menJacketsCatalogue.addProductToCart(productName);
 		
-		ProductPage productPage = new ProductPage(driver);
 		productPage.addItemToCart();
-		productPage.goToCartPage();
 		
-		CartPage cartPage = new CartPage(driver);
+		CartPage cartPage = productPage.goToCartPage();
 		Boolean match = cartPage.VerifyProductDisplay(productName);	
-		Assert.assertTrue(match);	
-		cartPage.goToCheckout();
+		Assert.assertTrue(match);
 		
-		CheckoutShippingPage checkoutShippingPage = new CheckoutShippingPage(driver);
-		checkoutShippingPage.goToPaymantMethodPage();
+		CheckoutShippingPage checkoutShippingPage = cartPage.goToCheckout();
 		
-		PaymantMethodPage paymantMethodPage = new PaymantMethodPage(driver);
-		paymantMethodPage.placeOrder();
+		PaymantMethodPage paymantMethodPage = checkoutShippingPage.goToPaymantMethodPage();
 		
+		ConfirmationPage confirmationPage = paymantMethodPage.placeOrder();
+		
+		System.out.println(confirmationPage.getConfirmationMessage());
+	}
+	
+	@Test(dependsOnMethods = {"SubmitOrder"})
+	public void CheckoutCartPopupOrderHistoryTest()
+	{
+		LoginPage loginPage = homePage.clickOnSignIn();
+		loginPage.loginApplication("seho-emir@gmail.com", "Verysecureone1");
+		homePage.checkoutCartPopup();
+		Assert.assertFalse(homePage.verifyOrdersInCartPopup(productName));
 	}
 
 }

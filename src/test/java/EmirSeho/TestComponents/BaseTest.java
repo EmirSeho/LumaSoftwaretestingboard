@@ -36,34 +36,34 @@ public class BaseTest {
 	public WebDriver initializeDriver() throws IOException
 
 	{
+		//reading GlobalData.properties from main/java/resources
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//EmirSeho//resources//GlobalData.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//resources//GlobalData.properties");
 		prop.load(fis);
 		
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 		
-		//prop.getProperty("browser");
+		//String browserName = System.getProperty("browser");
 		
 		if (browserName.contains("chrome")) {
 			
 			ChromeOptions options = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
 			if(browserName.contains("headless")) {
-				options.addArguments("headless");				
-			}
-			driver = new ChromeDriver(options);
+			options.addArguments("headless");				
+		}
 			
 			driver = new ChromeDriver(options);
 			driver.manage().window().setSize(new Dimension(1440, 900));//full screen
 
 		} else if (browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\\\Users\\\\Emir\\\\Desktop\\\\New folder\\\\eclipse\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "C:\\Users\\Emir\\Desktop\\New folder\\eclipse\\geckodriver.exe");
 			driver = new FirefoxDriver();
-			// Firefox
+		
 		} else if (browserName.equalsIgnoreCase("edge")) {
-			// Edge
 			System.setProperty("webdriver.edge.driver", "C:\\Users\\Emir\\Desktop\\New folder\\eclipse\\edge.exe");
 			driver = new EdgeDriver();
+			
 		}
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

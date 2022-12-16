@@ -3,6 +3,7 @@ package PageObjects;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,10 +35,12 @@ public class CartPage extends AbstractComponent{
 		return match;
 	}
 
-	public void goToCheckout() {
+	public CheckoutShippingPage goToCheckout() {
 		waitForWebElementToBeClickable(goToCheckoutBy);
-		goToCheckoutEle.click();		
-
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click()", goToCheckoutEle);
+		CheckoutShippingPage checkoutShippingPage = new CheckoutShippingPage(driver);
+		return checkoutShippingPage;
 	}
 	
 }

@@ -22,9 +22,11 @@ public class MenPage  extends AbstractComponent{
 	@FindBy(xpath="//a[text()='Jackets']")
 	WebElement jackets;
 	
-	public void clickOnJackets()
+	public MenJacketsCatalogue clickOnJackets()
 	{
 		jackets.click();
+		MenJacketsCatalogue menJacketsCatalogue = new MenJacketsCatalogue(driver);
+		return menJacketsCatalogue;
 	}
 	
 

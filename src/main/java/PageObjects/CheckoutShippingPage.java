@@ -1,6 +1,7 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,10 +28,14 @@ public class CheckoutShippingPage extends AbstractComponent{
 	@FindBy(css = ".button.action.continue.primary")
 	WebElement goToPaymantMethodPageButton;
 	
-	public void goToPaymantMethodPage() throws InterruptedException {
-		waitForElementToDisappear(checkoutLoader);
+	public PaymantMethodPage goToPaymantMethodPage() throws InterruptedException {
+		//waitForElementToDisappear(checkoutLoader);
 		waitForWebElementToBeClickable(goToPaymantMethodPageButtonBy);
-		goToPaymantMethodPageButton.click();
+		//goToPaymantMethodPageButton.click();
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click()", goToPaymantMethodPageButton);
+		PaymantMethodPage paymantMethodPage = new PaymantMethodPage(driver);
+		return paymantMethodPage;
 	}
 
 }

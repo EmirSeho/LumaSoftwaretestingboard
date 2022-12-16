@@ -24,12 +24,14 @@ public class HomePage extends AbstractComponent{
 	
 	public void goTo()
 	{
-		driver.get("https://magento.softwaretestingboard.com/what-is-new.html");
+		driver.get("https://magento.softwaretestingboard.com");
 	}
 	
-	public void clickOnSignIn()
+	public LoginPage clickOnSignIn()
 	{
 		signInEle.click();
+		LoginPage loginPage = new LoginPage(driver);
+		return loginPage;
 	}
 
 }

@@ -27,11 +27,20 @@ public class LoginPage extends AbstractComponent{
 	@FindBy(id="send2")
 	WebElement submit;
 	
+	@FindBy(css=".message-error.error.message div")
+	WebElement errorMessage;
+	
 	public void loginApplication(String email, String password)
 	{
 		userEmail.sendKeys(email);
 		passwordEle.sendKeys(password);
 		submit.click();
+	}
+	
+	public String getErrorMessage()
+	{
+		waitForWebElementToAppear(errorMessage);
+		return errorMessage.getText();
 	}
 
 }

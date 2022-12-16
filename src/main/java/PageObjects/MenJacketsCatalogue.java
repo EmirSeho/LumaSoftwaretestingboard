@@ -38,10 +38,12 @@ public class MenJacketsCatalogue extends AbstractComponent{
 		return prod;
 	}
 	
-	public void addProductToCart(String productName) throws InterruptedException
+	public ProductPage addProductToCart(String productName) throws InterruptedException
 	{
 		WebElement prod = getProductByName(productName);
 		prod.findElement(addToCart).click();
+		ProductPage productPage = new ProductPage(driver);
+		return productPage;
 	}
 	
 	

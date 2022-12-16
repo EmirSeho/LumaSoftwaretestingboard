@@ -25,9 +25,11 @@ public class PaymantMethodPage extends AbstractComponent{
 	@FindBy(css = ".payment-method._active .action.primary.checkout")
 	WebElement placeOrder;
 	
-	public void placeOrder() {
+	public ConfirmationPage placeOrder() {
 		waitForWebElementToBeClickable(placeOrderBy);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click()", placeOrder);
+		ConfirmationPage confirmationPage = new ConfirmationPage(driver);
+		return confirmationPage;
 	}
 }
