@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Error Validation Tests(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Submit Order Tests(failed)">
     <groups>
       <run>
-        <include name="ErrorHandling"/>
+        <include name="Purchase"/>
       </run>
     </groups>
     <classes>
-      <class name="EmirSeho.tests.ErrorValidationsTests">
+      <class name="EmirSeho.tests.SubmitOrderTest">
         <methods>
-          <include name="LoginErrorValidtion"/>
+          <include name="SubmitOrder" invocation-numbers="1"/>
+          <include name="launchApplication"/>
+          <include name="CheckoutCartPopupOrderHistoryTest"/>
         </methods>
-      </class> <!-- EmirSeho.tests.ErrorValidationsTests -->
+      </class> <!-- EmirSeho.tests.SubmitOrderTest -->
     </classes>
-  </test> <!-- Error Validation Tests(failed) -->
+  </test> <!-- Submit Order Tests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

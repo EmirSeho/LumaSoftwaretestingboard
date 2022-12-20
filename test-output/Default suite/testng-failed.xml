@@ -5,8 +5,8 @@
     <classes>
       <class name="EmirSeho.tests.SubmitOrderTest">
         <methods>
-          <include name="SubmitOrder"/>
           <include name="launchApplication"/>
+          <include name="SubmitOrder" invocation-numbers="1"/>
           <include name="CheckoutCartPopupOrderHistoryTest"/>
         </methods>
       </class> <!-- EmirSeho.tests.SubmitOrderTest -->

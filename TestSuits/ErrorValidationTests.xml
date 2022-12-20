@@ -17,7 +17,6 @@
   <test thread-count="5" name="Error Validation Tests">
     <classes>
       <class name="EmirSeho.tests.ErrorValidationsTests"/>
-      <class name="EmirSeho.tests.SubmitOrderTest"/>
     </classes>
   </test> <!-- Test -->
   

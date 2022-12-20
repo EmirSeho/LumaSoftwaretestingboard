@@ -32,12 +32,15 @@ public class ProductPage  extends AbstractComponent{
 	
 	By productSizeBy = By.id("option-label-size-143-item-168");
 	
+	By addtoCartButtonBy = By.id("product-addtocart-button");
+	
 	
 	public void addItemToCart()
 	{
 		waitForElementToAppear(productSizeBy);
 		productSize.click();
 		productColor.click();
+		waitForWebElementToBeClickable(addtoCartButtonBy);
 		addtoCartButton.click();
 	}
 
