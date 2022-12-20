@@ -1,4 +1,4 @@
-package EmirSeho.AbstractComponents;
+package AbstractComponents;
 
 import java.time.Duration;
 import java.util.List;
@@ -87,12 +87,12 @@ public class AbstractComponent {
 	
 	
 	public void waitForElementToAppear(By findBy) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 	}
 	
 	public void waitForWebElementToBeClickable(By findBy) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(findBy));
 	}
 	

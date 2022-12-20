@@ -1,13 +1,13 @@
 [
   {
-    "email": "sehoemir@gmail.com",
+    "email": "seho-emir@gmail.com",
     "password": "Verysecureone1",
     "product": "Lando Gym Jacket"
   },
 
   {
-    "email": "sehoemir@gmail.com",
-    "password": "Verysecureone1",
+    "email": "sehoemirtest@gmail.com",
+    "password": "Verysecureone2",
     "product": "Proteus Fitness Jackshirt"
   }
 ]

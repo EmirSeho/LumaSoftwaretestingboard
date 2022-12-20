@@ -1,4 +1,4 @@
-package EmirSeho.tests;
+package tests;
 
 import java.time.Duration;
 import java.util.List;

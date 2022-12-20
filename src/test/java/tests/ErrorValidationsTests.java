@@ -1,4 +1,4 @@
-package EmirSeho.tests;
+package tests;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -16,7 +16,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import EmirSeho.TestComponents.BaseTest;
 import PageObjects.CartPage;
 import PageObjects.CheckoutShippingPage;
 import PageObjects.ConfirmationPage;
@@ -26,6 +25,7 @@ import PageObjects.MenJacketsCatalogue;
 import PageObjects.MenPage;
 import PageObjects.PaymantMethodPage;
 import PageObjects.ProductPage;
+import TestComponents.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ErrorValidationsTests extends BaseTest{

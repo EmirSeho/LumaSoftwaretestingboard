@@ -8,13 +8,13 @@
       </run>
     </groups>
     <classes>
-      <class name="EmirSeho.tests.SubmitOrderTest">
+      <class name="tests.SubmitOrderTest">
         <methods>
-          <include name="SubmitOrder" invocation-numbers="1"/>
           <include name="launchApplication"/>
+          <include name="SubmitOrder" invocation-numbers="1"/>
           <include name="CheckoutCartPopupOrderHistoryTest"/>
         </methods>
-      </class> <!-- EmirSeho.tests.SubmitOrderTest -->
+      </class> <!-- tests.SubmitOrderTest -->
     </classes>
   </test> <!-- Submit Order Tests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

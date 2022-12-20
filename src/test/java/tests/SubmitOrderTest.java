@@ -1,4 +1,4 @@
-package EmirSeho.tests;
+package tests;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -18,7 +18,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import EmirSeho.TestComponents.BaseTest;
 import PageObjects.CartPage;
 import PageObjects.CheckoutShippingPage;
 import PageObjects.ConfirmationPage;
@@ -28,12 +27,14 @@ import PageObjects.MenJacketsCatalogue;
 import PageObjects.MenPage;
 import PageObjects.PaymantMethodPage;
 import PageObjects.ProductPage;
+import TestComponents.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SubmitOrderTest extends BaseTest{
 
-	String productName = "Lando Gym Jacket";
+	//String productName = "Lando Gym Jacket";
 	
+	//@Test(dataProvider = "getData", groups = {"Purchase"}, retryAnalyzer = Retry.class)
 	@Test(dataProvider = "getData", groups = {"Purchase"})
 	public void SubmitOrder(HashMap<String,String> input) throws InterruptedException, IOException {
 		

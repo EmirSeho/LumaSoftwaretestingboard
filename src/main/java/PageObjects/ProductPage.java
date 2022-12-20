@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import EmirSeho.AbstractComponents.AbstractComponent;
+import AbstractComponents.AbstractComponent;
 
 public class ProductPage  extends AbstractComponent{
 
@@ -35,7 +35,7 @@ public class ProductPage  extends AbstractComponent{
 	By addtoCartButtonBy = By.id("product-addtocart-button");
 	
 	
-	public void addItemToCart()
+	public void addItemToCart() throws InterruptedException
 	{
 		waitForElementToAppear(productSizeBy);
 		productSize.click();

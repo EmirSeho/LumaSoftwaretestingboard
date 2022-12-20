@@ -2,16 +2,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel = "tests" name="Suite">
   
+  <listeners>
+	<listener class-name="TestComponents.Listeners"/>
+</listeners>
   
   <test thread-count="5" name="Submit Order Tests">
     <classes>
-      <class name="EmirSeho.tests.SubmitOrderTest"/>
+      <class name="tests.SubmitOrderTest"/>
     </classes>
   </test> <!-- Test -->
   
   <test thread-count="5" name="Error Validation Tests">
     <classes>
-      <class name="EmirSeho.tests.ErrorValidationsTests"/>
+      <class name="tests.ErrorValidationsTests"/>
     </classes>
   </test> <!-- Test -->
   

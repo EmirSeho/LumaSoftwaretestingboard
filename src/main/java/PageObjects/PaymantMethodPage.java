@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import EmirSeho.AbstractComponents.AbstractComponent;
+import AbstractComponents.AbstractComponent;
 
 public class PaymantMethodPage extends AbstractComponent{
 

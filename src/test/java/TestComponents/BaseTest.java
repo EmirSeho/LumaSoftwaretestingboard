@@ -1,4 +1,4 @@
-package EmirSeho.TestComponents;
+package TestComponents;
 
 import java.io.File;
 import java.io.FileInputStream;
