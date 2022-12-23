@@ -23,7 +23,7 @@ import PageObjects.CheckoutShippingPage;
 import PageObjects.ConfirmationPage;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
-import PageObjects.MenJacketsCatalogue;
+import PageObjects.MenTopsCatalogue;
 import PageObjects.MenPage;
 import PageObjects.PaymantMethodPage;
 import PageObjects.ProductPage;
@@ -47,9 +47,9 @@ public class SubmitOrderTest extends BaseTest{
 		
 		MenPage menPage = homePage.clickOnMenTabLink();
 		
-		MenJacketsCatalogue menJacketsCatalogue = menPage.clickOnJackets();
+		MenTopsCatalogue menTopsCatalogue = menPage.clickOnTops();
 		
-		ProductPage productPage = menJacketsCatalogue.addProductToCart(input.get("product"));
+		ProductPage productPage = menTopsCatalogue.addProductToCart(input.get("product"));
 		
 		productPage.addItemToCart();
 		
@@ -66,7 +66,7 @@ public class SubmitOrderTest extends BaseTest{
 		System.out.println(confirmationPage.getConfirmationMessage());
 	}
 	
-	@Test(dependsOnMethods = {"SubmitOrder"}, dataProvider = "getData", groups = {"Purchase"})
+	@Test(dependsOnMethods = {"SubmitOrder"}, dataProvider = "getData")
 	public void CheckoutCartPopupOrderHistoryTest(HashMap<String,String> input)
 	{
 		LoginPage loginPage = homePage.clickOnSignIn();

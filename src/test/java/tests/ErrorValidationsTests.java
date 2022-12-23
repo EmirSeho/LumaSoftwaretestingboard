@@ -21,7 +21,7 @@ import PageObjects.CheckoutShippingPage;
 import PageObjects.ConfirmationPage;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
-import PageObjects.MenJacketsCatalogue;
+import PageObjects.MenTopsCatalogue;
 import PageObjects.MenPage;
 import PageObjects.PaymantMethodPage;
 import PageObjects.ProductPage;
@@ -61,9 +61,9 @@ public class ErrorValidationsTests extends BaseTest{
 		
 		MenPage menPage = homePage.clickOnMenTabLink();
 		
-		MenJacketsCatalogue menJacketsCatalogue = menPage.clickOnJackets();
+		MenTopsCatalogue menTopsCatalogue = menPage.clickOnTops();
 		
-		ProductPage productPage = menJacketsCatalogue.addProductToCart(productName);
+		ProductPage productPage = menTopsCatalogue.addProductToCart(productName);
 		
 		productPage.addItemToCart();
 		

@@ -35,8 +35,9 @@ public class CartPage extends AbstractComponent{
 		return match;
 	}
 
-	public CheckoutShippingPage goToCheckout() {
+	public CheckoutShippingPage goToCheckout() throws InterruptedException {
 		waitForWebElementToBeClickable(goToCheckoutBy);
+		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click()", goToCheckoutEle);
 		CheckoutShippingPage checkoutShippingPage = new CheckoutShippingPage(driver);

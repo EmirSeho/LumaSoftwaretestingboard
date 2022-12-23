@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="6" passed="4" failed="0" skipped="0">
+<testng-results ignored="3" total="5" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-20T11:58:55 CET" name="Suite" finished-at="2022-12-20T12:01:54 CET" duration-ms="179139">
+  <suite started-at="2022-12-21T12:20:21 CET" name="Suite" finished-at="2022-12-21T12:22:08 CET" duration-ms="106788">
     <groups>
       <group name="Purchase">
         <method signature="SubmitOrderTest.SubmitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@740cae06]" name="SubmitOrder" class="tests.SubmitOrderTest"/>
-        <method signature="SubmitOrderTest.CheckoutCartPopupOrderHistoryTest(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@740cae06]" name="CheckoutCartPopupOrderHistoryTest" class="tests.SubmitOrderTest"/>
       </group> <!-- Purchase -->
     </groups>
-    <test started-at="2022-12-20T11:58:55 CET" name="Submit Order Tests" finished-at="2022-12-20T12:01:54 CET" duration-ms="179092">
+    <test started-at="2022-12-21T12:20:21 CET" name="Submit Order Tests" finished-at="2022-12-21T12:22:08 CET" duration-ms="106729">
       <class name="tests.SubmitOrderTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-20T11:58:56 CET" name="launchApplication" finished-at="2022-12-20T11:59:09 CET" duration-ms="13542" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-21T12:20:22 CET" name="launchApplication" finished-at="2022-12-21T12:20:36 CET" duration-ms="14053" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="SubmitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-20T11:59:09 CET" name="SubmitOrder" data-provider="getData" finished-at="2022-12-20T11:59:42 CET" duration-ms="33067" status="PASS">
+        <test-method signature="SubmitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-21T12:20:36 CET" name="SubmitOrder" data-provider="getData" finished-at="2022-12-21T12:21:12 CET" duration-ms="36102" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=Verysecureone1, product=Lando Gym Jacket, email=seho-emir@gmail.com}]]>
+                <![CDATA[{password=Verysecureone1, product=Zoltan Gym Tee, email=seho-emir@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubmitOrder -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-20T11:59:42 CET" name="launchApplication" finished-at="2022-12-20T11:59:57 CET" duration-ms="15194" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-21T12:21:12 CET" name="launchApplication" finished-at="2022-12-21T12:21:24 CET" duration-ms="12273" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="SubmitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-20T11:59:57 CET" name="SubmitOrder" data-provider="getData" finished-at="2022-12-20T12:00:41 CET" duration-ms="43741" status="PASS">
+        <test-method signature="SubmitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-21T12:21:24 CET" name="SubmitOrder" data-provider="getData" finished-at="2022-12-21T12:22:08 CET" duration-ms="43636" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -38,42 +37,64 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: .message-success.success.message (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.5.0', revision: 'fe167b119a'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Emir\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:54246}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54246/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 27cc444013e223f3ab4df05acda1c28a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .message-success.success.message (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.5.0', revision: 'fe167b119a'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Emir\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:54246}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54246/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 27cc444013e223f3ab4df05acda1c28a
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at AbstractComponents.AbstractComponent.waitForElementToAppear(AbstractComponent.java:91)
+at AbstractComponents.AbstractComponent.goToCartPage(AbstractComponent.java:52)
+at tests.SubmitOrderTest.SubmitOrder(SubmitOrderTest.java:56)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubmitOrder -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-20T12:00:41 CET" name="launchApplication" finished-at="2022-12-20T12:00:57 CET" duration-ms="15797" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="CheckoutCartPopupOrderHistoryTest(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-20T12:00:57 CET" name="CheckoutCartPopupOrderHistoryTest" data-provider="getData" finished-at="2022-12-20T12:01:13 CET" depends-on-methods="tests.SubmitOrderTest.SubmitOrder" duration-ms="16238" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=Verysecureone1, product=Lando Gym Jacket, email=seho-emir@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckoutCartPopupOrderHistoryTest -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-20T12:01:13 CET" name="launchApplication" finished-at="2022-12-20T12:01:37 CET" duration-ms="24210" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="CheckoutCartPopupOrderHistoryTest(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@740cae06]" started-at="2022-12-20T12:01:37 CET" name="CheckoutCartPopupOrderHistoryTest" data-provider="getData" finished-at="2022-12-20T12:01:54 CET" depends-on-methods="tests.SubmitOrderTest.SubmitOrder" duration-ms="16781" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=Verysecureone2, product=Proteus Fitness Jackshirt, email=sehoemirtest@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckoutCartPopupOrderHistoryTest -->
       </class> <!-- tests.SubmitOrderTest -->
     </test> <!-- Submit Order Tests -->
-    <test started-at="2022-12-20T12:01:54 CET" name="Error Validation Tests" finished-at="2022-12-20T12:01:54 CET" duration-ms="1">
+    <test started-at="2022-12-21T12:22:08 CET" name="Error Validation Tests" finished-at="2022-12-21T12:22:08 CET" duration-ms="2">
     </test> <!-- Error Validation Tests -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -19,14 +19,15 @@ public class MenPage  extends AbstractComponent{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[text()='Jackets']")
-	WebElement jackets;
+	//@FindBy(xpath="//a[text()='Jackets']")
+	@FindBy(xpath="//a[text()='Tops']")
+	WebElement tops;
 	
-	public MenJacketsCatalogue clickOnJackets()
+	public MenTopsCatalogue clickOnTops()
 	{
-		jackets.click();
-		MenJacketsCatalogue menJacketsCatalogue = new MenJacketsCatalogue(driver);
-		return menJacketsCatalogue;
+		tops.click();
+		MenTopsCatalogue menTopsCatalogue = new MenTopsCatalogue(driver);
+		return menTopsCatalogue;
 	}
 	
 

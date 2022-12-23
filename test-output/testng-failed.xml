@@ -12,7 +12,6 @@
         <methods>
           <include name="launchApplication"/>
           <include name="SubmitOrder" invocation-numbers="1"/>
-          <include name="CheckoutCartPopupOrderHistoryTest"/>
         </methods>
       </class> <!-- tests.SubmitOrderTest -->
     </classes>
